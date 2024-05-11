@@ -13,13 +13,6 @@ export interface LibError extends Error {
   source: string;
 }
 
-declare global {
-  interface Window {
-    crypto: Crypto;
-    msCrypto: Crypto;
-  }
-}
-
 function createError(message: string): LibError {
   const err = new Error(message) as LibError;
   err.source = "ulid";
